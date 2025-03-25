@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
+    <VBox spacing="20" prefWidth="600" layoutX="20" layoutY="20">
+
+        <Label text="Hospital Management System" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+
+        <TabPane prefHeight="400.0" prefWidth="600.0">
+
+            <Tab text="Manage Patients">
+                <AnchorPane>
+                    <VBox spacing="10" layoutX="10" layoutY="10">
+                        <TextField fx:id="idField" promptText="ID" />
+                        <TextField fx:id="nameField" promptText="Name" />
+                        <TextField fx:id="addressField" promptText="Address" />
+                        <TextField fx:id="phoneField" promptText="Phone" />
+                        <Button text="Add Patient" onAction="#handleAddPatient" />
+                        <Button text="View All Patients" onAction="#handleViewPatients" />
+                        <Button text="Find Patient by ID" onAction="#handleFindPatient" />
+                        <Button text="Delete Patient" onAction="#handleDeletePatient" />
+                        <Button text="Modify Patient" onAction="#handleModifyPatient" />
+                        <Button text="Filter Patients by Name" onAction="#handleFilterPatients" />
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+
+            <Tab text="Manage Appointments">
+                <AnchorPane>
+                    <VBox spacing="10" layoutX="10" layoutY="10">
+                        <TextField fx:id="appointmentIdField" promptText="Appointment ID" />
+                        <TextField fx:id="patientIdField" promptText="Patient ID" />
+                        <TextField fx:id="appointmentDateField" promptText="Date (yyyy-mm-dd)" />
+                        <Button text="Add Appointment" onAction="#handleAddAppointment" />
+                        <Button text="View All Appointments" onAction="#handleViewAppointments" />
+                        <Button text="Find Appointment by ID" onAction="#handleFindAppointment" />
+                        <Button text="Delete Appointment" onAction="#handleDeleteAppointment" />
+                        <Button text="Modify Appointment" onAction="#handleModifyAppointment" />
+                        <Button text="Filter Appointments by Date" onAction="#handleFilterAppointments" />
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+
+            <Tab text="View Reports">
+                <AnchorPane>
+                    <VBox spacing="10" layoutX="10" layoutY="10">
+                        <TextField fx:id="reportInputField" promptText="Enter ID or Appointment ID" />
+                        <Button text="Get Patient Address by ID" onAction="#handlePatientAddressReport" />
+                        <Button text="Get Patient Phone by ID" onAction="#handlePatientPhoneReport" />
+                        <Button text="Get Patient Name by ID" onAction="#handlePatientNameByIdReport" />
+                        <Button text="Get Appointment Date by ID" onAction="#handleAppointmentDateReport" />
+                        <Button text="Get Patient Name by Appointment ID" onAction="#handlePatientNameByAppointmentIdReport" />
+                    </VBox>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+
+
+        <TextArea fx:id="outputArea" editable="false" prefHeight="150.0" prefWidth="600.0" />
+    </VBox>
+</AnchorPane>
